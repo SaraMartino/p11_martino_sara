@@ -145,6 +145,7 @@ public class ApplicazioneAmministratoreSistemaTest {
 		assertTrue(app.modifyPasswordGestoreCinema("RSSLCU80A01D969P", "1111"));
 		assertFalse(app.modifyPasswordGestoreCinema("RSSLCU80A01D969P", "2"));
 		assertFalse(app.modifyPasswordGestoreCinema("RSSLCU80A01D969P", "p a s s"));
+		assertFalse(app.modifyPasswordGestoreCinema("RSSLCU80A01D969P", null));
 	}
 	
 	@Test
@@ -232,9 +233,11 @@ public class ApplicazioneAmministratoreSistemaTest {
 		assertTrue(app.changeUsername("AnnaB"));
 		assertFalse(app.changeUsername("AB"));
 		assertFalse(app.changeUsername("u s e r"));
+		assertFalse(app.changeUsername(null));
 		assertTrue(app.changePassword("1111"));
 		assertFalse(app.changePassword("2"));
 		assertFalse(app.changePassword("p a s s"));
+		assertFalse(app.changePassword(null));
 	}
 	
 	@Test
