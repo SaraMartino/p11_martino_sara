@@ -426,15 +426,15 @@ public class ApplicazioneAmministratoreSistema extends Applicazione {
 	 * Returns null if the specified GestoreCinema is not registered in the
 	 * system.
 	 * 
-	 * @param username	The username of the manager of the cinemas
+	 * @param usernameGestoreCinema	The username of the manager of the cinemas
 	 * @return			The iterator over the list of cinemas
 	 */
-	public static ListaCinemaIterator getListaCinemaIterator(String username) {
-		if (!mapCinema.containsKey(username)) {
+	public static ListaCinemaIterator getListaCinemaIterator(String usernameGestoreCinema) {
+		if (!mapCinema.containsKey(usernameGestoreCinema)) {
 			return null;
 		}
 		else {
-			return mapCinema.get(username).getIterator();
+			return mapCinema.get(usernameGestoreCinema).getIterator();
 		}
 	}
 	
@@ -478,15 +478,15 @@ public class ApplicazioneAmministratoreSistema extends Applicazione {
 	 * <p>
 	 * Returns false if there is no film corresponding to this id.
 	 * 
-	 * @param id The id of the desired film
+	 * @param filmId The id of the desired film
 	 * @return true if there is the film that corresponds to this id, false otherwise.
 	 */
-	public static boolean printSchedaFilm(String id) {
-		if (!listaFilm.containsKey(id)) {
+	public static boolean printSchedaFilm(String filmId) {
+		if (!listaFilm.containsKey(filmId)) {
 			return false;
 		}
 		
-		listaFilm.get(id).printAllInfo();
+		listaFilm.get(filmId).printAllInfo();
 		return true;
 	}
 	

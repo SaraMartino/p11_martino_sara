@@ -279,12 +279,12 @@ public class ApplicazioneGestoreCinema extends Applicazione {
 	 * is not registered and logged; an empty list if no room is available.
 	 * 
 	 * @param cinemaId 		The id of the cinema
-     * @param s 			The show for which you want to check the availability of the rooms
+     * @param spettacolo 			The show for which you want to check the availability of the rooms
      * @param numberOfDays 	The number of days you want to keep the show in schedule
      * @return null in case of errors, the list of the available rooms if present,
      * an empty list otherwise.
 	 */
-	public ArrayList<Sala> verifyRoomsAvailability(int cinemaId, Spettacolo s,
+	public ArrayList<Sala> verifyRoomsAvailability(int cinemaId, Spettacolo spettacolo,
 			int numberOfDays) {
 		refreshGestoreCinema();
 		if (gestore == null || !gestore.isLogged()) {
@@ -307,7 +307,7 @@ public class ApplicazioneGestoreCinema extends Applicazione {
 			if (cinema == null)
 				return null;
 			
-			return cinema.verifyRoomsAvailability(s, numberOfDays);
+			return cinema.verifyRoomsAvailability(spettacolo, numberOfDays);
 		}
 	}
 	
@@ -320,12 +320,12 @@ public class ApplicazioneGestoreCinema extends Applicazione {
 	 * if the sala specified by idSala is not available.
 	 * 
 	 * @param cinemaId The id of the cinema
-     * @param s The show to add
+     * @param spettacolo The show to add
      * @param numberOfDays The number of days you want to keep the show in schedule
      * @param idSala The id of the sala in which you want to add the shows
      * @return true if the operation is succesfully completed, false otherwise
 	 */
-	public boolean addShows(int cinemaId, Spettacolo s, int numberOfDays, int idSala) {
+	public boolean addShows(int cinemaId, Spettacolo spettacolo, int numberOfDays, int idSala) {
 		refreshGestoreCinema();
 		if (gestore == null || !gestore.isLogged()	|| numberOfDays == 0) {
 			return false;
@@ -346,7 +346,7 @@ public class ApplicazioneGestoreCinema extends Applicazione {
 			if (cinema == null)
 				return false;
 			
-			return cinema.addShows(s, numberOfDays, idSala);
+			return cinema.addShows(spettacolo, numberOfDays, idSala);
 		}
 	}
 	

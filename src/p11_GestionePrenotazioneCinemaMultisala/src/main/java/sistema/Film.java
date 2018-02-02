@@ -118,7 +118,7 @@ public class Film {
      * <p>
      * Returns true if and only if the title of the film contains each word of the input string.
      * 
-     * @param t	the sequence of words to compare with the title
+     * @param param	the sequence of words to compare with the title
      * @return	true if the title of the film contains each word of the input string,
      * 		false otherwise
      */
@@ -126,9 +126,9 @@ public class Film {
     /*
 	 * This function is necessary in order to search a film by title or part of it
 	 */
-    public boolean compareTitle(String t) {
+    public boolean compareTitle(String param) {
     	boolean flag = true;
-        String[] splitStr = t.split("\\s+");
+        String[] splitStr = param.split("\\s+");
     	for (int i = 0; i < splitStr.length; i++) {
     		String temp = splitStr[i];
     		if (!this.titolo.toLowerCase().contains(temp.toLowerCase())) {
@@ -144,14 +144,14 @@ public class Film {
      * <p>
      * Returns true if and only if the year of the film is the same as the input.
      * 
-     * @param y	the year to compare with the year of the film
+     * @param year	the year to compare with the year of the film
      * @return	true if the year of the film is the same as the input parameter, false otherwise
      */   	
     /*
      * This function is necessary in order to search a film by year
      */
-    public boolean compareYear(int y) {
-    	return (this.anno == y);
+    public boolean compareYear(int year) {
+    	return (this.anno == year);
     }
     	
     /**
@@ -160,16 +160,16 @@ public class Film {
      * Returns true if and only if one of the elements of the genres list of the film
      * equals the input.
      * 
-     * @param g	the genre to compare
+     * @param param	the genre to compare
      * @return	true if the input is the same as one of the elements of the genres list of the
      * 		film, false otherwise
      */	
     /*
      * This function is necessary in order to search a film by genre
      */
-    public boolean compareGenre(String g) {
+    public boolean compareGenre(String param) {
     	for (int i = 0; i < listaGeneri.size(); i++) {
-    		if (this.listaGeneri.get(i).toLowerCase().equals(g.toLowerCase())) {
+    		if (this.listaGeneri.get(i).toLowerCase().equals(param.toLowerCase())) {
     			return true;
     		}	
     	}
@@ -182,15 +182,15 @@ public class Film {
      * Returns true if and only if the string representing the director of the film contains 
      * each word of the input string.
      * 
-     * @param d	the sequence of words to compare with the director
+     * @param param	the sequence of words to compare with the director
      * @return	true if the director of the film contains each word of the input string,
      * 		false otherwise
      */	
     /*
      * This function is necessary in order to search a film by director
      */
-    public boolean compareDirector(String d) {
-    	String[] splitStr = d.split("\\s+");
+    public boolean compareDirector(String param) {
+    	String[] splitStr = param.split("\\s+");
     	boolean flag = true;
     	for (int i = 0; i < splitStr.length; i++) {
     		String temp = splitStr[i];
@@ -208,15 +208,15 @@ public class Film {
      * Returns true if and only if one of the elements of the actors list of the film
      * contains each word of the input.
      * 
-     * @param a	the sequence of words to compare with the actors
+     * @param param	the sequence of words to compare with the actors
      * @return	true if one of the elements of the actors list of the film contains
      * 		each word of the input string, false otherwise
      */ 	
     /*
      * This function is necessary in order to search a film by actor
      */
-    public boolean compareActor(String a) {
-    	String[] splitStr = a.split("\\s+");
+    public boolean compareActor(String param) {
+    	String[] splitStr = param.split("\\s+");
     	boolean flag = true;
     	for (int j = 0; j < attori.size(); j++) {
     		flag = true;
@@ -240,15 +240,15 @@ public class Film {
      * Returns true if and only if the production company of the film contains
      * the specified sequence of char values.
      * 
-     * @param c	the sequence to search for
+     * @param param	the sequence to search for
      * @return	true if the production company contains c, false otherwise
      */
     /*
      * This function is necessary in order to search a film by production company
      * or part of the name of the production company
      */
-    public boolean compareProductionCompany(String c) {
-    	return this.casaDiProduzione.toLowerCase().contains(c.toLowerCase());
+    public boolean compareProductionCompany(String param) {
+    	return this.casaDiProduzione.toLowerCase().contains(param.toLowerCase());
     }
     
     /**
@@ -257,15 +257,15 @@ public class Film {
      * Returns true if and only if each tag in the input parameter is contained in the tags
      * list of the film.
      * 
-     * @param t	the tags to compare
+     * @param param	the tags to compare
      * @return	true if each tag in the input string is contained in the tags list of
      * 		the film, false otherwise
      */
     /*
      * This function is necessary in order to search a film by tags
      */
-    public boolean compareTag(String t) {
-    	String[] splitStr = t.split("\\s+");
+    public boolean compareTag(String param) {
+    	String[] splitStr = param.split("\\s+");
     	boolean flag = false;
     	for (int i = 0; i < splitStr.length; i++) {
     		flag = false;

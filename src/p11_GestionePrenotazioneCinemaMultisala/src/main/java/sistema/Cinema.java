@@ -119,14 +119,14 @@ public class Cinema {
 	 * <p>
 	 * Returns false if there is no room with the specified id.
 	 * 
-	 * @param id the id of the room to remove
+	 * @param salaId the id of the room to remove
 	 * @return true if the room is removed, false otherwise
 	 */
-	public boolean removeSala(int id) {
-		if (!listaSale.containsKey(id)) {
+	public boolean removeSala(int salaId) {
+		if (!listaSale.containsKey(salaId)) {
 			return false;
 		} else {
-			listaSale.remove(id);
+			listaSale.remove(salaId);
 			return true;
 		}
 	}
@@ -178,16 +178,16 @@ public class Cinema {
 	 * <p>
 	 * Returns an empty list if no room is available.
 	 * 
-     * @param s The show for which you want to check the availability of the rooms
+     * @param spettacolo The show for which you want to check the availability of the rooms
      * @param numberOfDays The number of days you want to keep the show in schedule
      * @return The list of the available rooms if present, an empty list otherwise.
 	 */
-	public ArrayList<Sala> verifyRoomsAvailability(Spettacolo s, int numberOfDays) {
+	public ArrayList<Sala> verifyRoomsAvailability(Spettacolo spettacolo, int numberOfDays) {
 		ArrayList<Sala> availableRooms = new ArrayList<Sala>();
 		Iterator<Sala> rooms = listaSale.values().iterator();
 		while(rooms.hasNext()) {
 			Sala sala = rooms.next();
-			if (sala.verifyAvailability(s, numberOfDays)) {
+			if (sala.verifyAvailability(spettacolo, numberOfDays)) {
 				availableRooms.add(sala);
 			}
 		}
@@ -201,20 +201,20 @@ public class Cinema {
 	 * Returns false if the id of the sala does not exist, the number of days is zero or
 	 * if the room is not available.
 	 * 
-	 * @param s The show to add
+	 * @param spettacolo The show to add
      * @param numberOfDays The number of days you want to keep the show in schedule
      * @param idSala The id of the sala in which you want to add the shows
      * @return true if the operation is succesfully completed, false otherwise
 	 */
-	public boolean addShows(Spettacolo s, int numberOfDays, int idSala) {
+	public boolean addShows(Spettacolo spettacolo, int numberOfDays, int idSala) {
 		if (!listaSale.containsKey(idSala) || numberOfDays == 0) {
 			return false;
 		}
 		
 		Sala sala = listaSale.get(idSala);
-		s.setIdEvento(nextEventoId);
-		s.setSala(sala);
-		if (sala.addShow(s, numberOfDays)) {
+		spettacolo.setIdEvento(nextEventoId);
+		spettacolo.setSala(sala);
+		if (sala.addShow(spettacolo, numberOfDays)) {
 			nextEventoId++;
 			return true;
 		} else {

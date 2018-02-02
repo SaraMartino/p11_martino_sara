@@ -107,17 +107,17 @@ public class Sala {
 	 * Returns false if the room is not available (if the addition of the show passed as input would
 	 * cause a scheduling overlapping).
 	 * 
-     * @param  s The show for which you want to check the availability of the rooms
+     * @param  spettacolo The show for which you want to check the availability of the rooms
      * @return true if the room is available for the date and duration of the show passed as input,
      * false otherwise
 	 */
-	private boolean verifyAvailabilitySingleShow(Spettacolo s) {
-		if (!programmazione.containsKey(s.getKey())) {
+	private boolean verifyAvailabilitySingleShow(Spettacolo spettacolo) {
+		if (!programmazione.containsKey(spettacolo.getKey())) {
 			return true;
 		} else {
-			String key = s.getKey();
+			String key = spettacolo.getKey();
 			LinkedList<Spettacolo> shows = programmazione.get(key);
-			int index = Collections.binarySearch(shows, s);
+			int index = Collections.binarySearch(shows, spettacolo);
 			// There is already a show at the same hour and minutes
 			if (index >= 0) {
 				return false;
@@ -137,7 +137,7 @@ public class Sala {
 			previousEnd.add(Calendar.MINUTE, previous.getDurata());
 			// The previous show is the last of the day
 			if (index == shows.size()) {
-				if (s.getDataInizio().before(previousEnd)) {
+				if (spettacolo.getDataInizio().before(previousEnd)) {
 					return false;
 				} else {
 					return true;
@@ -145,10 +145,10 @@ public class Sala {
 			} else {
 				// There are a previous and a next shows
 				Calendar currentEnd = Calendar.getInstance();
-				currentEnd.setTimeInMillis(s.getDataInizio().getTimeInMillis());
-				currentEnd.add(Calendar.MINUTE, s.getDurata() + this.tempoAttrezzaggio);
+				currentEnd.setTimeInMillis(spettacolo.getDataInizio().getTimeInMillis());
+				currentEnd.add(Calendar.MINUTE, spettacolo.getDurata() + this.tempoAttrezzaggio);
 				Spettacolo next = shows.get(index);
-				if (s.getDataInizio().before(previousEnd) || currentEnd.after(next.getDataInizio())) {
+				if (spettacolo.getDataInizio().before(previousEnd) || currentEnd.after(next.getDataInizio())) {
 					return false;
 				} else {
 					return true;
@@ -164,15 +164,15 @@ public class Sala {
 	 * Returns false if the room is not available (if the addition of the show passed as input would
 	 * cause a scheduling overlapping).
 	 * 
-     * @param s The show for which you want to check the availability of the rooms
+     * @param spettacolo The show for which you want to check the availability of the rooms
      * @param numberOfDays The number of days you want to keep the show in schedule
      * @return true if the room is available for the date and duration of the show passed as input,
      * false otherwise
 	 */
-	public boolean verifyAvailability(Spettacolo s, int numberOfDays) {
+	public boolean verifyAvailability(Spettacolo spettacolo, int numberOfDays) {
 		boolean available = true;
 		for (int i = 0; i < numberOfDays; i++) {
-			Spettacolo show = s.getNextSpettacolo(i);
+			Spettacolo show = spettacolo.getNextSpettacolo(i);
 			if (!verifyAvailabilitySingleShow(show)) {
 				available = false;
 				break;
@@ -193,17 +193,17 @@ public class Sala {
 	 * cause a scheduling overlapping) or if the id of this sala does not correspond to the id of the
 	 * sala contained in s.
 	 * 
-	 * @param s The show to add
+	 * @param spettacolo The show to add
      * @param numberOfDays The number of days you want to keep the show in schedule
      * @return true if the operation is successfully completed, false otherwise
 	 */
-	public boolean addShow(Spettacolo s, int numberOfDays) {
-		if (this.id != s.getSalaId()) {
+	public boolean addShow(Spettacolo spettacolo, int numberOfDays) {
+		if (this.id != spettacolo.getSalaId()) {
 			return false;
-		} else if (verifyAvailability(s, numberOfDays)) {			
+		} else if (verifyAvailability(spettacolo, numberOfDays)) {			
 			// The room is available
 			for (int i = 0; i < numberOfDays; i++) {
-				Spettacolo nextShow = s.getNextSpettacolo(i);
+				Spettacolo nextShow = spettacolo.getNextSpettacolo(i);
 				String key = nextShow.getKey();
 				if (!programmazione.containsKey(key)) {
 					programmazione.put(key, new LinkedList<Spettacolo>());
