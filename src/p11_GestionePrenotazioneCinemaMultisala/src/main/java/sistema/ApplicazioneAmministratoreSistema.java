@@ -236,7 +236,7 @@ public class ApplicazioneAmministratoreSistema extends Applicazione {
 			if (!listaGestori.containsKey(usernameGestoreCinema)) {
 				return false;
 			}
-			else if (password.length() < 4 || password.contains(" ")) {
+			else if (password == null || password.length() < 4 || password.contains(" ")) {
 				return false;
 			}
 			else {
@@ -383,7 +383,7 @@ public class ApplicazioneAmministratoreSistema extends Applicazione {
 	 * Changes the username of the AmministratoreSistema.
 	 * <p>
 	 * Returns false if the AmministratoreSistema is not logged or if the
-	 * username is not correctly formatted (minimum 4 characters, no blank space)
+	 * username is not correctly formatted (not null, minimum 4 characters, no blank space)
 	 *
 	 * @param username							The new username
 	 * @return true if the operation has been successful, false otherwise
@@ -391,7 +391,7 @@ public class ApplicazioneAmministratoreSistema extends Applicazione {
 	public boolean changeUsername(String username) {
 		if (!admin.isLogged()) {
 			return false;
-		} else if (username.length() < 4 || username.contains(" ")) {
+		} else if (username == null || username.length() < 4 || username.contains(" ")) {
 			return false;
 		} else {
 			admin.setUsername(username);
@@ -403,7 +403,7 @@ public class ApplicazioneAmministratoreSistema extends Applicazione {
 	 * Changes the password of the AmministratoreSistema.
 	 * <p>
 	 * Returns false if the AmministratoreSistema is not logged or if the
-	 * password is not correctly formatted (minimum 4 characters, no blank space)
+	 * password is not correctly formatted (not null, minimum 4 characters, no blank space)
 	 * 
 	 * @param password							The new password
 	 * @return true if the operation has been successful, false otherwise
@@ -411,7 +411,7 @@ public class ApplicazioneAmministratoreSistema extends Applicazione {
 	public boolean changePassword(String password) {
 		if (!admin.isLogged()) {
 			return false;
-		} else if (password.length() < 4 || password.contains(" ")) {
+		} else if (password == null || password.length() < 4 || password.contains(" ")) {
 			return false;
 		} else {
 			admin.setPassword(password);
