@@ -107,7 +107,7 @@ public class Sala {
 	 * Returns false if the room is not available (if the addition of the show passed as input would
 	 * cause a scheduling overlapping).
 	 * 
-     * @param  show The show for which you want to check the availability of the rooms
+     * @param  s The show for which you want to check the availability of the rooms
      * @return true if the room is available for the date and duration of the show passed as input,
      * false otherwise
 	 */
