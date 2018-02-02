@@ -60,9 +60,20 @@ public class UC06GestireLeSaleDiUnoDeiPropriCinema {
 		return;
 	}
 
-	// Scenario alternativo 4a: il Gestore Cinema decide di annullare l'operazione
+	// Scenario alternativo 2a: L’Applicazione Gestore Cinema non trova alcun cinema registrato
 	@Test
 	public void UC6test2() {
+		// Remove the cinema in order to complete this use case correctly
+		adminApp.removeCinema("RSSLCU80A01D969P", cinema.getId());
+		
+		// 2a. L’Applicazione Gestore Cinema non trova alcun cinema registrato
+		assertFalse(managerApp.printAllCinema());
+		return;
+	}
+	
+	// Scenario alternativo 4a: il Gestore Cinema decide di annullare l'operazione
+	@Test
+	public void UC6test3() {
 		// 2. L’Applicazione Gestore Cinema mostra al Gestore Cinema la lista dei cinema
 		assertTrue(managerApp.printAllCinema());
 		// 3. L’Applicazione Gestore Cinema chiede al Gestore Cinema di inserire l’id del cinema
@@ -72,7 +83,7 @@ public class UC06GestireLeSaleDiUnoDeiPropriCinema {
 	
 	// Scenario alternativo 5a: L'Applicazione Gestore Cinema non valida i dati inseriti
 	@Test
-	public void UC6test3() {
+	public void UC6test4() {
 		// 2. L’Applicazione Gestore Cinema mostra al Gestore Cinema la lista dei cinema
 		assertTrue(managerApp.printAllCinema());
 		// 3. L’Applicazione Gestore Cinema chiede al Gestore Cinema di inserire l’id del cinema
@@ -85,7 +96,7 @@ public class UC06GestireLeSaleDiUnoDeiPropriCinema {
 
 	// Scenario alternativo 6a: L’Applicazione Gestore Cinema non trova sale registrate
 	@Test
-	public void UC6test4() {
+	public void UC6test5() {
 		// Remove the room in order to complete this use case correctly
 		assertTrue(managerApp.eliminaSala(cinema.getId(), salaId));
 		
@@ -108,7 +119,7 @@ public class UC06GestireLeSaleDiUnoDeiPropriCinema {
 	// 				SS1EliminareUnaSalaDiUnoDeiPropriCinema.java
 	// per una maggiore chiarezza
 	@Test
-	public void UC6test5() {
+	public void UC6test6() {
 		// 2. L’Applicazione Gestore Cinema mostra al Gestore Cinema la lista dei cinema
 		assertTrue(managerApp.printAllCinema());
 		// 3. L’Applicazione Gestore Cinema chiede al Gestore Cinema di inserire l’id del cinema
@@ -132,7 +143,7 @@ public class UC06GestireLeSaleDiUnoDeiPropriCinema {
 	// 				SS2InserireUnaNuovaSalaInUnoDeiPropriCinema.java
 	// per una maggiore chiarezza
 	@Test
-	public void UC6test6() {
+	public void UC6test7() {
 		// 2. L’Applicazione Gestore Cinema mostra al Gestore Cinema la lista dei cinema
 		assertTrue(managerApp.printAllCinema());
 		// 3. L’Applicazione Gestore Cinema chiede al Gestore Cinema di inserire l’id del cinema

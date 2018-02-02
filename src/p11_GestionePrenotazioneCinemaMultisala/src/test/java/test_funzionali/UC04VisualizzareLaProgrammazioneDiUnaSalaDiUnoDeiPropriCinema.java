@@ -97,9 +97,20 @@ public class UC04VisualizzareLaProgrammazioneDiUnaSalaDiUnoDeiPropriCinema {
 		assertTrue(managerApp.printAllShows(cinema.getId(), salaId));
 	}
 	
-	// Scenario alternativo 4a: il Gestore Cinema decide di annullare l'operazione
+	// Scenario alternativo 2a: L’Applicazione Gestore Cinema non trova alcun cinema registrato
 	@Test
 	public void UC4test2() {
+		// Remove the cinema in order to complete this use case correctly
+		adminApp.removeCinema("RSSLCU80A01D969P", cinema.getId());
+		
+		// 2a. L’Applicazione Gestore Cinema non trova alcun cinema registrato
+		assertFalse(managerApp.printAllCinema());
+		return;
+	}
+	
+	// Scenario alternativo 4a: il Gestore Cinema decide di annullare l'operazione
+	@Test
+	public void UC4test3() {
 		// 2. L’Applicazione Gestore Cinema mostra al Gestore Cinema la lista dei cinema
 		assertTrue(managerApp.printAllCinema());
 		// 3. L’Applicazione Gestore Cinema chiede al Gestore Cinema di inserire l’id del cinema
@@ -109,7 +120,7 @@ public class UC04VisualizzareLaProgrammazioneDiUnaSalaDiUnoDeiPropriCinema {
 	
 	// Scenario alternativo 5a: L'Applicazione Gestore Cinema non valida i dati inseriti
 	@Test
-	public void UC4test3() {
+	public void UC4test4() {
 		// 2. L’Applicazione Gestore Cinema mostra al Gestore Cinema la lista dei cinema
 		assertTrue(managerApp.printAllCinema());
 		// 3. L’Applicazione Gestore Cinema chiede al Gestore Cinema di inserire l’id del cinema
@@ -122,7 +133,7 @@ public class UC04VisualizzareLaProgrammazioneDiUnaSalaDiUnoDeiPropriCinema {
 	
 	// Scenario alternativo 6a: L’Applicazione Gestore Cinema non trova sale registrate
 	@Test
-	public void UC4test4() {
+	public void UC4test5() {
 		// Remove the room in order to complete this use case correctly
 		assertTrue(managerApp.eliminaSala(cinema.getId(), salaId));
 		
@@ -139,7 +150,7 @@ public class UC04VisualizzareLaProgrammazioneDiUnaSalaDiUnoDeiPropriCinema {
 	
 	// Scenario alternativo 8a: Il Gestore Cinema decide di annullare l’operazione
 	@Test
-	public void UC4test5() {
+	public void UC4test6() {
 		// Insert a new show in order to complete this use case correctly
 		Calendar date = Calendar.getInstance();
 		date.set(2018, 6, 1, 10, 00);
@@ -164,7 +175,7 @@ public class UC04VisualizzareLaProgrammazioneDiUnaSalaDiUnoDeiPropriCinema {
 	
 	// Scenario alternativo 9a: L’Applicazione Gestore Cinema non valida i dati inseriti
 	@Test
-	public void UC4test6() {
+	public void UC4test7() {
 		// Insert a new show in order to complete this use case correctly
 		Calendar date = Calendar.getInstance();
 		date.set(2018, 6, 1, 10, 00);
@@ -192,7 +203,7 @@ public class UC04VisualizzareLaProgrammazioneDiUnaSalaDiUnoDeiPropriCinema {
 	
 	// Scenario alternativo 10a: L’Applicazione Gestore Cinema non trova spettacoli
 	@Test
-	public void UC4test7() {
+	public void UC4test8() {
 		// 2. L’Applicazione Gestore Cinema mostra al Gestore Cinema la lista dei cinema
 		assertTrue(managerApp.printAllCinema());
 		// 3. L’Applicazione Gestore Cinema chiede al Gestore Cinema di inserire l’id del cinema

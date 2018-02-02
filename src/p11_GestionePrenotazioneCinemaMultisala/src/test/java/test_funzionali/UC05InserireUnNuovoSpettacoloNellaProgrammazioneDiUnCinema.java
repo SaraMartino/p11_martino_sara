@@ -71,7 +71,7 @@ public class UC05InserireUnNuovoSpettacoloNellaProgrammazioneDiUnCinema {
 
 	// Scenario principale: Il Gestore Cinema inserisce un nuovo spettacolo
 	@Test
-	public void UC6test1() {
+	public void UC5test1() {
 		// 2. L’Applicazione Gestore Cinema mostra al Gestore Cinema la lista dei cinema
 		assertTrue(managerApp.printAllCinema());
 		// 3. L’Applicazione Gestore Cinema chiede al Gestore Cinema di inserire l’id del cinema
@@ -105,9 +105,20 @@ public class UC05InserireUnNuovoSpettacoloNellaProgrammazioneDiUnCinema {
 		assertTrue(managerApp.addShows(cinema.getId(), show, 5, salaId));
 	}
 	
+	// Scenario alternativo 2a: L’Applicazione Gestore Cinema non trova alcun cinema registrato
+	@Test
+	public void UC5test2() {
+		// Remove the cinema in order to complete this use case correctly
+		adminApp.removeCinema("RSSLCU80A01D969P", cinema.getId());
+		
+		// 2a. L’Applicazione Gestore Cinema non trova alcun cinema registrato
+		assertFalse(managerApp.printAllCinema());
+		return;
+	}
+	
 	// Scenario alternativo 4a: Il Gestore Cinema decide di annullare l’operazione
 	@Test
-	public void UC6test2() {
+	public void UC5test3() {
 		// 2. L’Applicazione Gestore Cinema mostra al Gestore Cinema la lista dei cinema
 		assertTrue(managerApp.printAllCinema());
 		// 3. L’Applicazione Gestore Cinema chiede al Gestore Cinema di inserire l’id del cinema
@@ -117,7 +128,7 @@ public class UC05InserireUnNuovoSpettacoloNellaProgrammazioneDiUnCinema {
 	
 	// Scenario alternativo 5a: L’Applicazione Gestore Cinema non valida i dati inseriti
 	@Test
-	public void UC6test3() {
+	public void UC5test4() {
 		// 2. L’Applicazione Gestore Cinema mostra al Gestore Cinema la lista dei cinema
 		assertTrue(managerApp.printAllCinema());
 		// 3. L’Applicazione Gestore Cinema chiede al Gestore Cinema di inserire l’id del cinema
@@ -131,7 +142,7 @@ public class UC05InserireUnNuovoSpettacoloNellaProgrammazioneDiUnCinema {
 	
 	// Scenario alternativo 7a: Il Gestore Cinema decide di annullare l’operazione
 	@Test
-	public void UC6test4() {
+	public void UC5test5() {
 		// 2. L’Applicazione Gestore Cinema mostra al Gestore Cinema la lista dei cinema
 		assertTrue(managerApp.printAllCinema());
 		// 3. L’Applicazione Gestore Cinema chiede al Gestore Cinema di inserire l’id del cinema
@@ -146,7 +157,7 @@ public class UC05InserireUnNuovoSpettacoloNellaProgrammazioneDiUnCinema {
 	
 	// Scenario alternativo 8a: L’Applicazione Gestore Cinema non valida i dati inseriti
 	@Test
-	public void UC6test5() {
+	public void UC5test6() {
 		// 2. L’Applicazione Gestore Cinema mostra al Gestore Cinema la lista dei cinema
 		assertTrue(managerApp.printAllCinema());
 		// 3. L’Applicazione Gestore Cinema chiede al Gestore Cinema di inserire l’id del cinema
@@ -166,7 +177,7 @@ public class UC05InserireUnNuovoSpettacoloNellaProgrammazioneDiUnCinema {
 	
 	// Scenario alternativo 10a: Il Gestore Cinema decide di annullare l’operazione
 	@Test
-	public void UC6test6() {
+	public void UC5test7() {
 		// 2. L’Applicazione Gestore Cinema mostra al Gestore Cinema la lista dei cinema
 		assertTrue(managerApp.printAllCinema());
 		// 3. L’Applicazione Gestore Cinema chiede al Gestore Cinema di inserire l’id del cinema
@@ -190,7 +201,7 @@ public class UC05InserireUnNuovoSpettacoloNellaProgrammazioneDiUnCinema {
 	// Scenario alternativo 11a e 12a: L’Applicazione Gestore Cinema non valida i dati inseriti
 	// o non trova sale disponibili per la fascia oraria richiesta per i giorni specificati
 	@Test
-	public void UC6test7() {
+	public void UC5test8() {
 		// Insertion of a show in schedule in order to execute this use case
 		Calendar date = Calendar.getInstance();
 		date.set(2018, 6, 1, 10, 00);
@@ -229,7 +240,7 @@ public class UC05InserireUnNuovoSpettacoloNellaProgrammazioneDiUnCinema {
 	
 	// Scenario alternativo 15a: Il Gestore Cinema decide di non confermare l'operazione
 	@Test
-	public void UC6test8() {
+	public void UC5test9() {
 		// 2. L’Applicazione Gestore Cinema mostra al Gestore Cinema la lista dei cinema
 		assertTrue(managerApp.printAllCinema());
 		// 3. L’Applicazione Gestore Cinema chiede al Gestore Cinema di inserire l’id del cinema
