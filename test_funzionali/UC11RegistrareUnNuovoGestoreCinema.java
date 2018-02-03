@@ -35,6 +35,12 @@ public class UC11RegistrareUnNuovoGestoreCinema {
 		// di inserire i parametri registrazione Gestore Cinema
 		// 3. L’Amministratore Sistema immette i dati richiesti
 		// 4. L'Applicazione Amministratore Sistema registra il nuovo Gestore Cinema
+		// (In questa prima implementazione, la generazione di username per i gestori viene semplificata
+		// utilizzando come username il codice fiscale; poiché gli username devono essere unici,
+		// non possono essere registrati due gestori con lo stesso codice fiscale.
+		// Non viene effettuato nessun altro controllo sui dati inseriti
+		// La generazione corretta di username unici e la validazione dei dati sono lasciate
+		// ad una futura implementazione)
 		assertTrue(adminApp.registraNuovoGestoreCinema("Luca", "Rossi", "RSSLCU80A01D969P",
 				managerBirthday, "luca.rossi@gmail.com"));
 	}
@@ -52,7 +58,7 @@ public class UC11RegistrareUnNuovoGestoreCinema {
 	// il nuovo Gestore Cinema
 	@Test
 	public void UC11test3() {
-		// Register a manager in order to execute correctly this test
+		// Registrazione precedente del gestore per eseguire correttamente lo scenario alternativo
 		assertTrue(adminApp.registraNuovoGestoreCinema("Luca", "Rossi", "RSSLCU80A01D969P",
 				managerBirthday, "luca.rossi@gmail.com"));
 		
@@ -60,6 +66,12 @@ public class UC11RegistrareUnNuovoGestoreCinema {
 		// di inserire i parametri registrazione Gestore Cinema
 		// 3. L’Amministratore Sistema immette i dati richiesti
 		// 4a. L'Applicazione Amministratore Sistema non registra il nuovo Gestore Cinema
+		// (In questa prima implementazione, la generazione di username per i gestori viene semplificata
+		// utilizzando come username il codice fiscale; poiché gli username devono essere unici,
+		// non possono essere registrati due gestori con lo stesso codice fiscale.
+		// Non viene effettuato nessun altro controllo sui dati inseriti
+		// La generazione corretta di username unici e la validazione dei dati sono lasciate
+		// ad una futura implementazione)
 		assertFalse(adminApp.registraNuovoGestoreCinema("Luca", "Rossi", "RSSLCU80A01D969P",
 				managerBirthday, "luca.rossi@gmail.com"));
 		// Andare al passo 2 dello scenario principale

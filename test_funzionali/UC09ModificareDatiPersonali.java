@@ -31,8 +31,8 @@ public class UC09ModificareDatiPersonali {
 		// 2. L’Applicazione Amministratore Sistema chiede di inserire le modifiche
 		// 3. L’Amministratore Sistema inserisce i dati richiesti
 		// 4. L’Applicazione Amministratore Sistema effettua le modifiche
-		// Test all possible modification (in this first implementation there are no
-		// constraints on the email)
+		// (La validazione della mail non è implementata.
+		// Questa validazione è lasciata ad una futura implementazione)
 		assertTrue(adminApp.changeEmail("anna.bianchi@alice.it"));
 		assertTrue(adminApp.changeUsername("AnnaB"));
 		assertTrue(adminApp.changePassword("1111"));
@@ -55,8 +55,8 @@ public class UC09ModificareDatiPersonali {
 		// 2. L’Applicazione Amministratore Sistema chiede di inserire le modifiche
 		// 3. L’Amministratore Sistema inserisce i dati richiesti
 		// 4. L’Applicazione Amministratore Sistema non effettua le modifiche
-		// Test all possible modification (in this first implementation there are no
-		// constraints on the email)
+		// (La validazione della mail non è implementata.
+		// Questa validazione è lasciata ad una futura implementazione)
 		assertFalse(adminApp.changeUsername("AB"));
 		assertFalse(adminApp.changePassword("p a s s"));
 		adminApp.logout();

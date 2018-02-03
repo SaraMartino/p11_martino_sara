@@ -31,12 +31,12 @@ public class SS2InserireUnaNuovaSalaInUnoDeiPropriCinema {
 				"anna.bianchi@gmail.com");
 		adminApp.login("AnnaBianchi", "0000");
 		adminApp.resetApplication();
-		// Register the manager
+		// Registrazione di un nuovo gestore
 		adminApp.registraNuovoGestoreCinema("Luca", "Rossi", "RSSLCU80A01D969P",
 				managerBirthday, "luca.rossi@gmail.com");
 		managerApp = new ApplicazioneGestoreCinema();
 		managerApp.login("RSSLCU80A01D969P", "0000");
-		// Add a cinema and a sala for the manager
+		// Inserimento di un cinema e di una sala per il nuovo gestore
 		cinema = new Cinema("Odeon", "Corso Buenos Aires, 83, 16129 Genova");
 		adminApp.addNewCinema("RSSLCU80A01D969P", cinema);
 		salaId = managerApp.inserisciNuovaSala(cinema.getId(), "Sala A", 10, 10, 10);
@@ -65,6 +65,8 @@ public class SS2InserireUnaNuovaSalaInUnoDeiPropriCinema {
 		// della nuova sala
 		// 2. Il Gestore Cinema inserisce i dati richiesti
 		// 3. L’Applicazione Gestore Cinema valida i dati inseriti
+		// (si intende valori validi per numero di file, numero di posti per fila
+		// e tempo attrezzaggio. Questo controllo è lasciato ad una seconda implementazione)
 		// 5. Il Gestore Cinema conferma di voler procedere con l’inserimento
 		// 6. L'Applicazione Gestore Cinema inserisce la nuova sala
 		salaId = managerApp.inserisciNuovaSala(cinema.getId(), "Sala B", 10, 10, 10);
@@ -89,7 +91,7 @@ public class SS2InserireUnaNuovaSalaInUnoDeiPropriCinema {
 		// 2. Il Gestore Cinema inserisce i dati richiesti
 		// 3a. L'Applicazione Gestore Cinema non valida i dati inseriti
 		// (si intende valori non validi per numero di file, numero di posti per fila
-		// e tempo attrezzaggio)
+		// e tempo attrezzaggio. Questo controllo è lasciato ad una seconda implementazione)
 		// Andare al passo 1 dello scenario secondario
 	}
 	
@@ -116,6 +118,8 @@ public class SS2InserireUnaNuovaSalaInUnoDeiPropriCinema {
 		// della nuova sala
 		// 2. Il Gestore Cinema inserisce i dati richiesti
 		// 3. L’Applicazione Gestore Cinema valida i dati inseriti
+		// (si intende valori validi per numero di file, numero di posti per fila
+		// e tempo attrezzaggio. Questo controllo è lasciato ad una seconda implementazione)
 		// 5. Il Gestore Cinema conferma di voler procedere con l’inserimento
 		// 6a. L'Applicazione Gestore Cinema non riesce ad inserire la nuova sala
 		salaId = managerApp.inserisciNuovaSala(cinema.getId(), "Sala A", 10, 10, 10);

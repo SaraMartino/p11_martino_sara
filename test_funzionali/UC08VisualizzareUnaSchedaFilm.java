@@ -52,11 +52,11 @@ public class UC08VisualizzareUnaSchedaFilm {
 				"anna.bianchi@gmail.com");
 		adminApp.login("AnnaBianchi", "0000");
 		adminApp.resetApplication();
-		// Add a new film to the list of film of the CircuitoCinema
+		// Inserimento nuovo film nel circuito cinema
 		adminApp.inserisciNuovoFilm("10.5240/5A58-58D4-01CB-C41D-6902-K",
 				"La vita è bella", "Roberto Benigni", actors, 120, 1997, genre,
 				"Melampo Cinematografica", plot, tags);
-		// Register the manager
+		// Registrazione gestore
 		adminApp.registraNuovoGestoreCinema("Luca", "Rossi", "RSSLCU80A01D969P",
 				managerBirthday, "luca.rossi@gmail.com");
 		managerApp = new ApplicazioneGestoreCinema();

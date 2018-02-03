@@ -31,12 +31,12 @@ public class SS1EliminareUnaSalaDiUnoDeiPropriCinema {
 				"anna.bianchi@gmail.com");
 		adminApp.login("AnnaBianchi", "0000");
 		adminApp.resetApplication();
-		// Register the manager
+		// Registerazione del gestore
 		adminApp.registraNuovoGestoreCinema("Luca", "Rossi", "RSSLCU80A01D969P",
 				managerBirthday, "luca.rossi@gmail.com");
 		managerApp = new ApplicazioneGestoreCinema();
 		managerApp.login("RSSLCU80A01D969P", "0000");
-		// Add a cinema and a sala for the manager
+		// Inserimento di un cinema e di una sala per il nuovo gestore
 		cinema = new Cinema("Odeon", "Corso Buenos Aires, 83, 16129 Genova");
 		adminApp.addNewCinema("RSSLCU80A01D969P", cinema);
 		salaId = managerApp.inserisciNuovaSala(cinema.getId(), "Sala A", 10, 10, 10);

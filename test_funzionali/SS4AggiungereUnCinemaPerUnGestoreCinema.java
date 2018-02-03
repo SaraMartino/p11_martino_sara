@@ -26,7 +26,7 @@ public class SS4AggiungereUnCinemaPerUnGestoreCinema {
 				"anna.bianchi@gmail.com");
 		adminApp.login("AnnaBianchi", "0000");
 		adminApp.resetApplication();
-		// Register the manager
+		// Registrazione di un nuovo gestore
 		adminApp.registraNuovoGestoreCinema("Luca", "Rossi", "RSSLCU80A01D969P",
 				managerBirthday, "luca.rossi@gmail.com");
 		
@@ -49,7 +49,8 @@ public class SS4AggiungereUnCinemaPerUnGestoreCinema {
 		// nome e l’indirizzo del cinema
 		// 2. L'Amministratore Sistema inserisce i dati richiesti
 		// 3. L’Applicazione Amministratore Sistema valida i dati inseriti
-		// (non implementato; ad esempio indirizzo esistente)
+		// (Non implementato; ad esempio verificare che l'indirizzo esista.
+		// Questa validazione è lasciata ad una futura implementazione)
 		// 5. L’Amministratore Sistema conferma di voler procedere con l’inserimento
 		// 6. L'Applicazione Amministratore Sistema inserisce il nuovo cinema
 		Cinema cinema = new Cinema("Odeon", "Corso Buenos Aires, 83, 16129 Genova");
@@ -73,7 +74,8 @@ public class SS4AggiungereUnCinemaPerUnGestoreCinema {
 		// nome e l’indirizzo del cinema
 		// 2. L'Amministratore Sistema inserisce i dati richiesti
 		// 3a. L'Applicazione Amministratore Sistema non valida i dati inseriti
-		// (valore non valido per l'indirizzo)
+		// (valore non valido per l'indirizzo. Questa validazione è lasciata ad una futura
+		// implementazione)
 		// Andare al passo 1 dello scenario secondario
 	}
 	
@@ -84,7 +86,8 @@ public class SS4AggiungereUnCinemaPerUnGestoreCinema {
 		// nome e l’indirizzo del cinema
 		// 2. L'Amministratore Sistema inserisce i dati richiesti
 		// 3. L’Applicazione Amministratore Sistema valida i dati inseriti
-		// (non implementato; ad esempio indirizzo esistente)
+		// (Non implementato; ad esempio verificare che l'indirizzo esista.
+		// Questa validazione è lasciata ad una futura implementazione)
 		// 5a. L'Amministratore Sistema non conferma l'operazione
 		return;
 	}
@@ -101,7 +104,8 @@ public class SS4AggiungereUnCinemaPerUnGestoreCinema {
 		// nome e l’indirizzo del cinema
 		// 2. L'Amministratore Sistema inserisce i dati richiesti
 		// 3. L’Applicazione Amministratore Sistema valida i dati inseriti
-		// (non implementato; ad esempio indirizzo esistente)
+		// (Non implementato; ad esempio verificare che l'indirizzo esista.
+		// Questa validazione è lasciata ad una futura implementazione)
 		// 5. L’Amministratore Sistema conferma di voler procedere con l’inserimento
 		// 6. L'Applicazione Amministratore Sistema non inserisce il nuovo cinema
 		assertFalse(adminApp.addNewCinema("RSSLCU80A01D969P", cinema));

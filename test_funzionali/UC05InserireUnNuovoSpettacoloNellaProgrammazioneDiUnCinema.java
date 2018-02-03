@@ -53,16 +53,16 @@ public class UC05InserireUnNuovoSpettacoloNellaProgrammazioneDiUnCinema {
 				"anna.bianchi@gmail.com");
 		adminApp.login("AnnaBianchi", "0000");
 		adminApp.resetApplication();
-		// Add a new film to the list of film of the CircuitoCinema
+		// Inserimento di un film nel CircuitoCinema
 		adminApp.inserisciNuovoFilm("10.5240/5A58-58D4-01CB-C41D-6902-K",
 				"La vita è bella", "Roberto Benigni", actors, 120, 1997, genre,
 				"Melampo Cinematografica", plot, tags);
-		// Register the manager
+		// Registrazione Gestore
 		adminApp.registraNuovoGestoreCinema("Luca", "Rossi", "RSSLCU80A01D969P",
 				managerBirthday, "luca.rossi@gmail.com");
 		managerApp = new ApplicazioneGestoreCinema();
 		managerApp.login("RSSLCU80A01D969P", "0000");
-		// Add a cinema and a sala for the manager
+		// Inserimento cinema e sala per il nuovo Gestore
 		cinema = new Cinema("Odeon", "Corso Buenos Aires, 83, 16129 Genova");
 		adminApp.addNewCinema("RSSLCU80A01D969P", cinema);
 		int id = managerApp.inserisciNuovaSala(cinema.getId(), "Sala A", 10, 10, 10);
@@ -89,6 +89,9 @@ public class UC05InserireUnNuovoSpettacoloNellaProgrammazioneDiUnCinema {
 		
 		// 9. L’Applicazione Gestore Cinema chiede al Gestore Cinema i dati
 		// necessari all'inserimento
+		// (Non viene implementata una prima validazione dei dati, ad esempio verificare che
+		// la data sia corretta e futura o che il tempo di attrezzaggio sia minore di un certo valore.
+		// Questa validazione è lasciata ad una futura implementazione)
 		// 12. L’Applicazione Gestore Cinema mostra al Gestore Cinema le sale
 		// disponibili per i giorni specificati e nella fascia oraria richiesta
 		// basandosi sulla durata del film e sul tempo di attrezzaggio della sala
@@ -108,7 +111,7 @@ public class UC05InserireUnNuovoSpettacoloNellaProgrammazioneDiUnCinema {
 	// Scenario alternativo 2a: L’Applicazione Gestore Cinema non trova alcun cinema registrato
 	@Test
 	public void UC5test2() {
-		// Remove the cinema in order to complete this use case correctly
+		// Rimozione cinema
 		adminApp.removeCinema("RSSLCU80A01D969P", cinema.getId());
 		
 		// 2a. L’Applicazione Gestore Cinema non trova alcun cinema registrato
@@ -202,7 +205,8 @@ public class UC05InserireUnNuovoSpettacoloNellaProgrammazioneDiUnCinema {
 	// o non trova sale disponibili per la fascia oraria richiesta per i giorni specificati
 	@Test
 	public void UC5test8() {
-		// Insertion of a show in schedule in order to execute this use case
+		// Inserimento precedente di uno spettacolo per eseguire correttamente questo scenario
+		// alternativo
 		Calendar date = Calendar.getInstance();
 		date.set(2018, 6, 1, 10, 00);
 		date.add(Calendar.DAY_OF_MONTH, 5);

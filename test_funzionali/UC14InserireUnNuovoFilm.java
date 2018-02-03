@@ -57,7 +57,7 @@ public class UC14InserireUnNuovoFilm {
 		// di inserire le informazioni film
 		// 3. L’Amministratore Sistema immette i dati richiesti
 		// 4. L’applicazione Amministratore Sistema valida i dati inseriti
-		// (non implementato)
+		// (Non implementato. Questa validazione è lasciata ad una futura implementazione)
 		// 6. L'Amministratore Sistema conferma di voler procedere con l'inserimento
 		// 7. L’applicazione Amministratore Sistema inserisce il nuovo film
 		assertTrue(adminApp.inserisciNuovoFilm("10.5240/5A58-58D4-01CB-C41D-6902-K",
@@ -82,8 +82,7 @@ public class UC14InserireUnNuovoFilm {
 		// di inserire le informazioni film
 		// 3. L’Amministratore Sistema immette i dati richiesti
 		// 4a. L’applicazione Amministratore Sistema non valida i dati immessi
-		// (non implementato; i dati non sono validi se non completi e/o non formattati
-		// correttamente)
+		// (Non implementato. Questa validazione è lasciata ad una futura implementazione)
 		// Andare al passo 2 dello scenario principale
 	}
 
@@ -94,7 +93,7 @@ public class UC14InserireUnNuovoFilm {
 		// di inserire le informazioni film
 		// 3. L’Amministratore Sistema immette i dati richiesti
 		// 4. L’applicazione Amministratore Sistema valida i dati inseriti
-		// (non implementato)
+		// (Non implementato. Questa validazione è lasciata ad una futura implementazione)
 		// 6a. L'Amministratore Sistema non conferma l'operazione
 		return;
 	}
@@ -112,7 +111,7 @@ public class UC14InserireUnNuovoFilm {
 		// di inserire le informazioni film
 		// 3. L’Amministratore Sistema immette i dati richiesti
 		// 4. L’applicazione Amministratore Sistema valida i dati inseriti
-		// (non implementato)
+		// (Non implementato. Questa validazione è lasciata ad una futura implementazione)
 		// 6. L'Amministratore Sistema conferma di voler procedere con l'inserimento
 		// 7a. L’applicazione Amministratore Sistema non inserisce il nuovo film
 		assertFalse(adminApp.inserisciNuovoFilm("10.5240/5A58-58D4-01CB-C41D-6902-K",
