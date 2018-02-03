@@ -74,8 +74,10 @@ public class Persona {
     public void print() {
     	System.out.println("Nome:                    " + this.nome);
 		System.out.println("Cognome:                 " + this.cognome);
-		System.out.println("Data di nascita:         " + this.dataNascita.get(Calendar.DAY_OF_MONTH)
+		if (dataNascita != null) {
+			System.out.println("Data di nascita:         " + this.dataNascita.get(Calendar.DAY_OF_MONTH)
 				+ "/" + this.dataNascita.get(Calendar.MONTH) + "/" + this.dataNascita.get(Calendar.YEAR));		
+		}
 		System.out.println("Codice fiscale:          " + this.codiceFiscale);
     }
 }

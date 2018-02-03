@@ -30,12 +30,12 @@ public class UC06GestireLeSaleDiUnoDeiPropriCinema {
 				"anna.bianchi@gmail.com");
 		adminApp.login("AnnaBianchi", "0000");
 		adminApp.resetApplication();
-		// Register the manager
+		// Registerazione gestore
 		adminApp.registraNuovoGestoreCinema("Luca", "Rossi", "RSSLCU80A01D969P",
 				managerBirthday, "luca.rossi@gmail.com");
 		managerApp = new ApplicazioneGestoreCinema();
 		managerApp.login("RSSLCU80A01D969P", "0000");
-		// Add a cinema and a sala for the manager
+		// Inserimento cinema e sala
 		cinema = new Cinema("Odeon", "Corso Buenos Aires, 83, 16129 Genova");
 		adminApp.addNewCinema("RSSLCU80A01D969P", cinema);
 		salaId = managerApp.inserisciNuovaSala(cinema.getId(), "Sala A", 10, 10, 10);
@@ -97,7 +97,7 @@ public class UC06GestireLeSaleDiUnoDeiPropriCinema {
 	// Scenario alternativo 6a: L’Applicazione Gestore Cinema non trova sale registrate
 	@Test
 	public void UC6test5() {
-		// Remove the room in order to complete this use case correctly
+		// Rimozione sala per completare correttamente lo scenario alternativo
 		assertTrue(managerApp.eliminaSala(cinema.getId(), salaId));
 		
 		// 2. L’Applicazione Gestore Cinema mostra al Gestore Cinema la lista dei cinema

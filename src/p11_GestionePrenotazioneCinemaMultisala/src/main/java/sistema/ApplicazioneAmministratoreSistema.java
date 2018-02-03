@@ -30,6 +30,8 @@ public class ApplicazioneAmministratoreSistema extends Applicazione {
 	
 	/**
 	 * Constructs an object of type ApplicazioneAmministratoreSistema using the input parameters.
+	 * <p>
+	 * Throws an exception if username or password are null.
 	 * 
 	 * @param nome				The name of the admin
 	 * @param cognome			The surname of the admin
@@ -38,6 +40,7 @@ public class ApplicazioneAmministratoreSistema extends Applicazione {
 	 * @param username			The username of the admin
 	 * @param password			The password of the admin
 	 * @param email				The email of the admin
+	 * @throws	IllegalArgumentException
 	 */
 	public ApplicazioneAmministratoreSistema(String nome, String cognome, String codiceFiscale, Calendar dataNascita,
 			String username, String password, String email) {
@@ -659,9 +662,9 @@ public class ApplicazioneAmministratoreSistema extends Applicazione {
 	}
 	
 	/**
-	 * Send a mail to the specified email address passed an input.
+	 * Not yet implemented.
 	 * <p>
-	 * In this first implementation this function is not implemented.
+	 * Send a mail to the specified email address passed an input.
 	 * 
 	 * @param email			The email address of the recipient
 	 * @param arguments		An array of objects to be used to create the mail

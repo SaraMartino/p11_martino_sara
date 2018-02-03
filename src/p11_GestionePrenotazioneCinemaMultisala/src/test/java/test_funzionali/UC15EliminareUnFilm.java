@@ -48,7 +48,7 @@ public class UC15EliminareUnFilm {
 				"anna.bianchi@gmail.com");
 		adminApp.login("AnnaBianchi", "0000");
 		adminApp.resetApplication();
-		// Add a film
+		// Inserimento nuovo film
 		assertTrue(adminApp.inserisciNuovoFilm("10.5240/5A58-58D4-01CB-C41D-6902-K",
 				"La vita è bella", "Roberto Benigni", actors, 120, 1997, genre,
 				"Melampo Cinematografica", plot, tags));

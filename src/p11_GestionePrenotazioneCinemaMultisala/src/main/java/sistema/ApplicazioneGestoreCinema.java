@@ -470,9 +470,9 @@ public class ApplicazioneGestoreCinema extends Applicazione {
 	}
 	
 	/**
-	 * Send a mail to the specified email address passed an input.
+	 * Not yet implemented
 	 * <p>
-	 * In this first implementation this function is not implemented.
+	 * Send a mail to the specified email address passed an input.
 	 * 
 	 * @param email			The email address of the recipient
 	 * @param arguments		An array of objects to be used to create the mail

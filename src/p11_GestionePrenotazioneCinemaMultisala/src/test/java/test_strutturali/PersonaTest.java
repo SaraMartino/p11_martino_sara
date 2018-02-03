@@ -38,6 +38,8 @@ public class PersonaTest {
 	@Test
 	public void testPrint() {
 		p.print();
+		p = new Persona("Luca", "Rossi", "RSSLCU80A01D969P", null);
+		p.print();
 	}
 
 }

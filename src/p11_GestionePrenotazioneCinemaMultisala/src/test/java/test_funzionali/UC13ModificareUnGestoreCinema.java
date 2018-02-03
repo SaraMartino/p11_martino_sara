@@ -26,7 +26,7 @@ public class UC13ModificareUnGestoreCinema {
 				"anna.bianchi@gmail.com");
 		adminApp.login("AnnaBianchi", "0000");
 		adminApp.resetApplication();
-		// Register the manager
+		// Registrazione gestore
 		adminApp.registraNuovoGestoreCinema("Luca", "Rossi", "RSSLCU80A01D969P",
 				managerBirthday, "luca.rossi@gmail.com");
 	}
@@ -43,8 +43,8 @@ public class UC13ModificareUnGestoreCinema {
 		// 7. L'Applicazione Amministratore Sistema chiede di inserire le modifiche
 		// 8. L’Amministratore Sistema inserisce i dati richiesti
 		// 9. L'Applicazione Amministratore Sistema effettua le modifiche
-		// Test all possible modification (in this first implementation there are no
-		// constraints on the email)
+		// (La validazione della mail non è implementata.
+		// Questa validazione è lasciata ad una futura implementazione)
 		assertTrue(adminApp.modifyEmailGestoreCinema("RSSLCU80A01D969P", "luca.rossi@alice.it"));
 		assertTrue(adminApp.modifyPasswordGestoreCinema("RSSLCU80A01D969P", "1111"));
 	}
@@ -98,8 +98,8 @@ public class UC13ModificareUnGestoreCinema {
 		// 7. L'Applicazione Amministratore Sistema chiede di inserire le modifiche
 		// 8. L’Amministratore Sistema inserisce i dati richiesti
 		// 9a. L'Applicazione Amministratore Sistema non effettua le modifiche
-		// Test all possible modification (in this first implementation there are no
-		// constraints on the email)
+		// (La validazione della mail non è implementata.
+		// Questa validazione è lasciata ad una futura implementazione)
 		assertFalse(adminApp.modifyPasswordGestoreCinema("RSSLCU80A01D969P", "p a s s"));
 		// Andare al passo 7 dello scenario principale
 	}

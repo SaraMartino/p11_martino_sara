@@ -27,7 +27,7 @@ public class SS5RimuovereUnCinemaDiUnGestoreCinema {
 				"anna.bianchi@gmail.com");
 		adminApp.login("AnnaBianchi", "0000");
 		adminApp.resetApplication();
-		// Register the manager
+		// Registrazione di un nuovo gestore
 		adminApp.registraNuovoGestoreCinema("Luca", "Rossi", "RSSLCU80A01D969P",
 				managerBirthday, "luca.rossi@gmail.com");
 		cinema = new Cinema("Odeon", "Corso Buenos Aires, 83, 16129 Genova");
